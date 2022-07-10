@@ -1,4 +1,7 @@
 <script>
+
+    import Button from '../shared/Button.svelte';
+
     let fields = {
         question: '',
         answerA: '',
@@ -27,28 +30,28 @@
         <input type="text" id="answer-b" bind:value={fields.answerB}>
     </div>
 
-    <input type="submit" value="Add Poll"/>
+    <Button type="secondary" flat="{true}">Add Poll</Button>
 
 </form>
 
 <style>
-    form{
+    form {
         width: 400px;
         margin: 0 auto;
         text-align: center;
     }
 
-    .form-field{
+    .form-field {
         margin: 18px auto;
 
     }
 
-    input[type=text]{
+    input[type=text] {
         width: 100%;
         border-radius: 6px;
     }
 
-    label{
+    label {
         margin: 10px auto;
         text-align: left;
     }
