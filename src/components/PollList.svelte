@@ -1,5 +1,6 @@
 <script>
 
+    import Card from "../shared/Card.svelte";
     import PollDetails from "./PollDetails.svelte";
 
     export let polls = [];
@@ -7,7 +8,9 @@
 
 <section class="poll-list">
     {#each polls as poll (poll.id)}
-        <PollDetails {poll}/>
+        <Card>
+            <PollDetails {poll}/>
+        </Card>
     {/each}
 </section>
 
