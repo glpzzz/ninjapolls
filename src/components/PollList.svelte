@@ -9,7 +9,7 @@
 <section class="poll-list">
     {#each polls as poll (poll.id)}
         <Card>
-            <PollDetails {poll}/>
+            <PollDetails {poll} on:vote/>
         </Card>
     {/each}
 </section>
