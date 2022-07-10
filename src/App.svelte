@@ -2,6 +2,7 @@
 
     import Header from './components/Header.svelte';
     import Footer from './components/Footer.svelte';
+    import CreatePollForm from './components/CreatePollForm.svelte';
     import Tabs from './shared/Tabs.svelte';
 
     // tabs
@@ -23,7 +24,7 @@
     {#if activeItem === items[0]}
         <p>list of polls</p>
     {:else if activeItem === items[1]}
-        <p>new poll form</p>
+        <CreatePollForm />
     {/if}
 </main>
 <Footer/>
