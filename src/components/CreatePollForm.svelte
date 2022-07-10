@@ -1,6 +1,8 @@
 <script>
-
+    import {createEventDispatcher} from "svelte";
     import Button from '../shared/Button.svelte';
+
+    let dispatch = createEventDispatcher();
 
     let fields = {
         question: '',
@@ -41,9 +43,11 @@
         }
 
         if (valid) {
-            console.log('valid', fields);
+            dispatch('created', {
+                poll: {...fields, votesA: 0, votesB: 0, id: Math.random()},
+            });
         } else {
-            console.log(errors);
+            console.error(errors);
         }
 
     }
@@ -95,7 +99,7 @@
         text-align: left;
     }
 
-    .errors{
+    .errors {
         font-size: 85%;
         color: #d91b42;
         font-weight: bold;
