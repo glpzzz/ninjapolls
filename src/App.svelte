@@ -32,7 +32,7 @@
             question: 'Python or JavaScript?',
             answerA: 'Python',
             answerB: 'JavaScript',
-            votesA: 9,
+            votesA: 34,
             votesB: 15,
         }
     ];
