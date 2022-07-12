@@ -3,7 +3,14 @@
     import Card from "../shared/Card.svelte";
     import PollDetails from "./PollDetails.svelte";
 
+    import PollStore from "../stores/PollStore";
+
     export let polls = [];
+
+    PollStore.subscribe((data) => {
+        polls = data;
+    });
+
 </script>
 
 <section class="poll-list">

@@ -18,25 +18,6 @@
         console.log(activeItem);
     };
 
-    let polls = [
-        {
-            id: 1,
-            question: 'Python or JavaScript?',
-            answerA: 'Python',
-            answerB: 'JavaScript',
-            votesA: 9,
-            votesB: 15,
-        },
-        {
-            id: 2,
-            question: 'Python or JavaScript?',
-            answerA: 'Python',
-            answerB: 'JavaScript',
-            votesA: 34,
-            votesB: 15,
-        }
-    ];
-
     const createPollFormCreated = (e) => {
         console.log(e.detail.poll);
         polls = [...polls, e.detail.poll];
@@ -66,7 +47,7 @@
 <main>
     <Tabs {items} {activeItem} on:Tabs.change={tabsChanged}/>
     {#if activeItem === items[0]}
-        <PollList {polls} on:vote={handleVote}/>
+        <PollList on:vote={handleVote}/>
     {:else if activeItem === items[1]}
         <CreatePollForm on:created={createPollFormCreated}/>
     {/if}
